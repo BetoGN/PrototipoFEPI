@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clubs</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #f8f9fa;
+      z-index: 1000;
+    }
+
+    .navbar-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 5%;
+      height: 70%;
+      background-color: #fff;
+    }
+
+    .navbar-login {
+      display: flex;
+      align-items: center;
+      font-size: 18px;
+      color: #294D83;
+    }
+
+    .navbar-login img {
+      margin-right: 10px;
+    }
+
+    .navbar-logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar-logo img {
+      height: 80px; /* Increased the height for a larger logo */
+      margin-right: 10px;
+    }
+
+    .navbar-logo-text {
+      display: flex;
+      flex-direction: column;
+      font-family: 'Hammersmith One', sans-serif;
+      font-size: 28.7px;
+      line-height: 28.7px;
+    }
+
+    .navbar-logo-text span:first-child {
+      color: black;
+    }
+
+    .navbar-logo-text span:last-child {
+      color: #294D83;
+    }
+
+    .navbar-search {
+      display: flex;
+      align-items: center;
+      width: 20%;
+    }
+
+    .navbar-search input {
+      width: 100%;
+      padding: 8px;
+      background-color: #EFEFEF; /* Set background color */
+      color: black;
+      border: none; /* Remove border */
+      border-radius: 5px 0 0 5px;
+      font-size: 16px;
+    }
+
+    .navbar-search button {
+      padding: 8px;
+      background-color: #EFEFEF; /* Set background color */
+      border: none; /* No border */
+      cursor: pointer;
+      border-radius: 0 5px 5px 0;
+    }
+
+    .navbar-search button img {
+      width: 16px;
+      height: 16px;
+    }
+
+    .navbar-bottom {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      height: 30%;
+      background-color: #fff;
+      border-top: 1px solid #AFBBCD;
+      border-bottom: 1px solid #AFBBCD;
+    }
+
+    .navbar-bottom a {
+      color: black;
+      text-decoration: none; /* Remove underline */
+      padding: 5px 15px;
+      margin: 0 10px;
+      border-radius: 15px;
+      font-size: 16px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .navbar-bottom a.active,
+    .navbar-bottom a:hover {
+      background-color: #294D83;
+      color: white;
+      border-radius: 20px;
+      /*padding: 3px 12px;*/
+    }
+
+    .content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 150px 5% 50px; /* Adjusted padding to create separation from the top */
+    }
+
+
+    .club-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      background-color: #294D83;
+      color: white;
+      width: 14%; /* Smaller width */
+      height: 230px; /* Taller height */
+      margin: 3vh;
+      border-radius: 35px;
+      text-align: center;
+      padding: 15px 2px;
+      transition: transform 0.3s ease-in-out; /* Added transition for smooth animation */
+      text-decoration: none; /* Remove text underline */
+    }
+
+    .club-card:hover {
+      transform: translateY(-5px); /* Added translation on hover */
+    }
+
+    .club-card img {
+      border-radius: 50%;
+      width: 75%; /* Smaller logo */
+      height: auto;
+      margin-bottom: 20px; /* Added more spacing between logo and text */
+      transition: transform 0.3s ease-in-out; /* Added transition for smooth animation */
+    }
+
+    .club-card:hover img {
+      transform: translateY(-10px); /* Added translation for logo on hover */
+    }
+
+    .club-card span {
+      font-family: 'Hammersmith One', sans-serif;
+      font-size: 16px; /* Increased font size for club text */
+      padding: 6px 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="navbar-top">
+      <div class="navbar-login">
+        <img src="images/login-icon.png" alt="Login Icon" width="24" height="24">
+        <span>Iniciar Sesión</span>
+      </div>
+      <div class="navbar-logo">
+        <img src="images/logo.png" alt="Logo">
+        <div class="navbar-logo-text">
+          <span>Cultural</span>
+          <span>ESCOM</span>
+        </div>
+      </div>
+      <div class="navbar-search">
+        <input type="text" placeholder="search">
+        <button type="button">
+          <img src="images/search-icon.png" alt="Search Icon">
+        </button>
+      </div>
+    </div>
+    <div class="navbar-bottom">
+      <a href="#inicio">Inicio</a>
+      <a href="#avisos">Avisos</a>
+      <a href="#calendario">Calendario</a>
+      <a href="#clubs" class="active">Clubs</a>
+      <a href="#talleres">Talleres</a>
+      <a href="#galeria">Galería</a>
+    </div>
+  </div>
+
+  <div class="content">
+    <a href="#club1" class="club-card">
+      <img src="images/club1-logo.png" alt="Club 1 Logo">
+      <span>Club de Algoritmia</span>
+    </a>
+    <a href="#club2" class="club-card">
+      <img src="images/club2-logo.png" alt="Club 2 Logo">
+      <span>Club de Seguridad Informática</span>
+    </a>
+    <a href="#club3" class="club-card">
+      <img src="images/club3-logo.png" alt="Club 3 Logo">
+      <span>Club de Tuna Femenil</span>
+    </a>
+    <a href="#club4" class="club-card">
+      <img src="images/club4-logo.png" alt="Club 4 Logo">
+      <span>Club de Desarrollo Web</span>
+    </a>
+    <a href="#club5" class="club-card">
+      <img src="images/club5-logo.png" alt="Club 5 Logo">
+      <span>Club de ESPORTS</span>
+    </a>
+    <a href="#club6" class="club-card">
+      <img src="images/club6-logo.png" alt="Club 6 Logo">
+      <span>Club de Mini Robótica</span>
+    </a>
+    <a href="#club7" class="club-card">
+      <img src="images/club7-logo.png" alt="Club 7 Logo">
+      <span>Club de Ajedrés</span>
+    </a>
+    <a href="#club8" class="club-card">
+      <img src="images/club8-logo.png" alt="Club 8 Logo">
+      <span>Club de Desarrollo de Videojuegos</span>
+    </a>
+    <a href="#club9" class="club-card">
+      <img src="images/club9-logo.png" alt="Club 9 Logo">
+      <span>Club de Taekwondo</span>
+    </a>
+    <a href="#club10" class="club-card">
+      <img src="images/club10-logo.png" alt="Club 10 Logo">
+      <span>Club de Smash Competitivo</span>
+    </a>
+    <a href="#club11" class="club-card">
+      <img src="images/club11-logo.png" alt="Club 11 Logo">
+      <span>Club de Fotogaría</span>
+    </a>
+    <a href="#club12" class="club-card">
+      <img src="images/club12-logo.png" alt="Club 12 Logo">
+      <span>Club de Volleyball</span>
+    </a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #294D83; /* Blue background color */
+    }
+
+    .background-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    .background {
+      background-image: url('images/escomLetras.png');
+      background-size: cover;
+      background-position: center;
+      width: 90%;
+      height: 80%; /* Cover 80% of the page height */
+      margin: 15vh 0; /* Create a gap of 15vh above and below */
+    }
+
+    .logo-container {
+      width: 144px; /* 20% bigger than the logo (120px * 1.2) */
+      height: 72px; /* Half the height to make it a semicircle */
+      background-color: rgba(199, 220, 255, 0.4); /* Blue-ish translucent background */
+      border-radius: 72px 72px 0 0; /* Make it a semicircle */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: calc(50% - 244px); /* Vertically center both containers */
+      z-index: 2;
+    }
+
+    .logo {
+      width: 110px;
+      height: 110px;
+      position: absolute;
+      top: 2vh; /* Position the logo to overlap */
+    }
+
+    .login-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 35vw; /* Wider */
+      padding: 20px; /* Padding */
+      background-color: rgba(199, 220, 255, 0.4); /* Blue-ish translucent background */
+      border-radius: 65px; /* Fully rounded corners */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: absolute;
+      top: calc(50% - 172px); /* Vertically center both containers */
+      z-index: 1;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 15px;
+      color: white; /* White title */
+      margin-top: 2vw;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      color: white; /* White text */
+      margin-left: -5.5vw;
+      margin-top: 1vh;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 150%;
+      padding: 10px; /* Increased padding */
+      margin-bottom: 10px;
+      margin-left: -5.5vw;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #AFBBCD; /* Textbox color */
+    }
+
+    button[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #294D83; /* Same color as the background */
+      color: white;
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
+      margin-top: 3vh;
+      margin-bottom: 2vh;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #1a355b; /* Slightly darker shade for hover */
+    }
+
+    p {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Adjust positioning for everything inside the login container */
+    .content-wrapper {
+      margin-top: 10px; /* Push content down to account for logo overlap */
+    }
+
+    
+
+  </style>
+</head>
+<body>
+  <div class="background-container">
+    <div class="background"></div>
+    <div class="logo-container">
+      <img src="images/logo.png" alt="Logo" class="logo">
+    </div>
+    <div class="login-container">
+      <div class="content-wrapper">
+        <h1>Inicia sesión</h1>
+        <form id="login-form">
+          <label for="username">Usuario</label>
+          <input type="text" id="username" name="username" required>
+          <label for="password">Contraseña</label>
+          <input type="password" id="password" name="password" required>
+
+          <button type="submit">ENTRAR</button>
+        </form>
+        <p>
+          Si aún no estás registrado, <a href="#">click aquí</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.getElementById("login-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+      
+      // Handle form submission logic here
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+      
+      console.log(`Username: ${username}`);
+      console.log(`Password: ${password}`);
+      
+      // Add your form submission handling logic here
+    });
+  </script>
+</body>
+</html>
