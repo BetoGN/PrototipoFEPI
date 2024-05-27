@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Regístrate</title>
   <style>
+
+
+
     body {
       font-family: Arial, sans-serif;
       display: flex;
@@ -42,29 +45,30 @@
       justify-content: center;
       align-items: center;
       position: absolute;
-      top: calc(45% - 244px); /* Adjusted top position */
+      top: calc(45% - 294px); /* Adjusted top position */
       z-index: 2;
     }
 
     .logo {
-      width: 110px;
-      height: 110px;
+      width: 100px;
+      height: 100px;
       position: absolute;
       top: 2vh; /* Position the logo to overlap */
     }
 
     .login-container {
+      max-height: 80vh;
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
       width: 35vw; /* Wider */
-      padding: 20px; /* Padding */
+      padding: 10px; /* Padding */
       background-color: rgba(199, 220, 255, 0.4); /* Blue-ish translucent background */
       border-radius: 65px; /* Fully rounded corners */
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       position: absolute;
-      top: calc(45% - 172px); /* Adjusted top position */
+      top: calc(45% - 222px); /* Adjusted top position */
       z-index: 1;
     }
 
@@ -80,7 +84,7 @@
       margin-bottom: 5px;
       color: white; /* White text */
       margin-left: -5.5vw;
-      margin-top: 1vh;
+      margin-top: 0vh;
     }
 
     input[type="text"],
@@ -102,7 +106,7 @@
       border: none;
       border-radius: 2px;
       cursor: pointer;
-      margin-top: 3vh;
+      margin-top: 1vh;
       margin-bottom: 2vh;
     }
 
@@ -112,7 +116,7 @@
 
     p {
       text-align: center;
-      margin-top: 10px;
+      margin-top: 5px;
     }
 
     a {
@@ -128,6 +132,134 @@
     .content-wrapper {
       margin-top: 10px; /* Push content down to account for logo overlap */
     }
+
+
+
+    /* { border: 1px solid red !important; }*/
+
+
+    @media only screen and (max-aspect-ratio: 9/16) {
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 108vh;
+    margin: 0;
+    background-color: #ffffff; /* White background color */
+  }
+
+  .background {
+    display: none; /* Hide background image on mobile */
+  }
+
+  .background-container {
+    background-color: #294D83; /* Blue background color */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  .logo-container {
+    width: 100%;
+    height: 20vh; /* Automatically adjust height based on content (logo) */
+    background-color: rgba(199, 220, 255, 0.4); /* Blue-ish translucent background */
+    border-radius: 0; /* No border radius */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+  }
+
+
+  .logo {
+    width: 110px; /* Larger width for logo */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 90%; /* 90% width on mobile */
+    max-width: 300px; /* Maximum width for mobile */
+    background-color: rgba(199, 220, 255, 0.4); /* Blue-ish translucent background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative; /* Relative positioning */
+    z-index: 1;
+    top: 6vh;
+    margin: 5vh auto; /* Center horizontally */
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #ffffff; /* White color for title */
+    margin-top: 2vw;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: #ffffff; /* White color for text */
+    margin-top: 1vh;
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    width: calc(100% - 40px); /* 100% width minus padding */
+    padding: 10px; /* Padding */
+    margin-bottom: 10px; /* Increased margin bottom */
+    border: 1px solid #ccc; /* Border */
+    border-radius: 5px; /* Border radius */
+    background-color: #AFBBCD; /* Textbox color */
+  }
+
+  button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #294D83; /* Blue color for button background */
+    color: #ffffff; /* White color for button text */
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-top: 20px; /* Increased margin top */
+    margin-bottom: 10px; /* Decreased margin bottom */
+  }
+
+  button[type="submit"]:hover {
+    background-color: #1a355b; /* Darker shade for hover */
+  }
+
+  p {
+    text-align: center;
+    margin-top: 10px;
+    color: #ffffff; /* White color for paragraph */
+  }
+
+  a {
+    color: #007bff;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  /* Adjust positioning for everything inside the login container */
+  .content-wrapper {
+    margin-top: -10px; /* Push content down to account for logo overlap */
+  }
+}
+
+
   </style>
 </head>
 <body>
@@ -140,8 +272,12 @@
       <div class="content-wrapper">
         <h1>Regístrate</h1>
         <form id="login-form">
+          <label for="name">Nombre</label>
+          <input type="text" id="name" name="name" required>
           <label for="boleta">Número de boleta</label>
           <input type="text" id="boleta" name="boleta" required>
+          <label for="username">Nombre de usuario</label>
+          <input type="text" id="username" name="username" required>
           <label for="password">Ingresa una contraseña</label>
           <input type="password" id="password" name="password" required>
           <label for="confirm-password">Repetir contraseña</label>
